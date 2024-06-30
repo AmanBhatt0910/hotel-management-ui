@@ -35,4 +35,4 @@ export const FooterContactData = [
     contact: "(+91) 97567 05659",
     email: "info@parthhotel.com"
   }
-];
+]

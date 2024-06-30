@@ -1,5 +1,5 @@
 import React from 'react';
-import { navItems } from '@/data/Navbar';
+import { navItems } from '@/data/NavbarData';
 import Link from 'next/link';
 
 const PrimaryNav = () => {
