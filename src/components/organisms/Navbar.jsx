@@ -7,7 +7,7 @@ const Navbar = () => {
   return (
     <nav className="bg-gray-800 shadow-lg">
       <div className="max-w-6xl mx-auto px-4">̥
-        <div className="flex justify-between items-center py-4">
+        <div className="flex justify-between items-center py-1">
           <HomeLogo name="Parth Hotel" />
 
           <PrimaryNav />
