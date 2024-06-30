@@ -5,8 +5,8 @@ import NavButton from '../atoms/NavBar/NavButton';
 
 const Navbar = () => {
   return (
-    <nav className="bg-gradient-to-r from-gray-900 to-gray-800 shadow-lg">
-      <div className="max-w-6xl mx-auto px-4">
+    <nav className="bg-gray-800 shadow-lg">
+      <div className="max-w-6xl mx-auto px-4">̥
         <div className="flex justify-between items-center py-4">
           <HomeLogo name="Parth Hotel" />
 
