@@ -32,7 +32,7 @@ export const testimonialsData = [
     name: 'Jitendra Pandey',
     position: 'Backend Engineer',
     company: 'JPMorgan Chase',
-    avatar: '/avatars/janu.jpg',
+    avatar: '/home/dummy-testimonials.png',
     content: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
   },
   {
@@ -40,7 +40,7 @@ export const testimonialsData = [
     name: 'Sumit Pandey',
     position: 'Teacher',
     company: 'abc school',
-    avatar: '/avatars/john-doe-avatar.jpg',
+    avatar: '/home/dummy-testimonials.png',
     content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris dapibus dapibus ipsum, in semper ligula facilisis ut.'
   },
   {
@@ -48,7 +48,7 @@ export const testimonialsData = [
     name: 'Amit Pandey',
     position: 'Food preserver',
     company: 'Jagnath Fruit Processing',
-    avatar: '/avatars/jane-smith-avatar.jpg',
+    avatar: '/home/dummy-testimonials.png',
     content: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
   }
 ];
