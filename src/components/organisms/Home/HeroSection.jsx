@@ -4,7 +4,7 @@ const HeroSection = () => {
   return (
     <div
       className="relative h-[85vh] md:h-screen bg-cover bg-center overflow-hidden"
-      style={{ backgroundImage: "url('/Home/bg.png')" }}
+      style={{ backgroundImage: "url('/Home/mountain-image.jpg')" }}
     >
       <div className="absolute inset-0 bg-gradient-to-b from-gray-800 to-transparent"></div>
       
