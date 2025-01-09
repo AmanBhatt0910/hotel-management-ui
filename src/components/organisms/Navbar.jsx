@@ -1,15 +1,23 @@
+"use client";
+
 import React, { useState, useEffect } from "react";
-import PrimaryNav from "../atoms/NavBar/PrimaryNav";
+import { useRouter } from "next/navigation";
 import HomeLogo from "@/components/atoms/NavBar/Homelogo";
 import NavButton from "../atoms/NavBar/NavButton";
+import { navItems } from "@/data/NavbarData";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const router = useRouter();
 
-  // Close the mobile menu if clicked outside
   const handleClickOutside = (e) => {
     if (e.target.closest(".mobile-menu") || e.target.closest(".mobile-menu-button")) return;
     setIsMobileMenuOpen(false);
+  };
+
+  const handleLinkClick = (href) => {
+    setIsMobileMenuOpen(false);
+    router.push(href);
   };
 
   useEffect(() => {
@@ -31,10 +39,19 @@ const Navbar = () => {
             <HomeLogo name="Parth Hotel" />
           </div>
 
-          {/* Desktop Navigation */}
-          <PrimaryNav />
+          <div className="hidden md:flex items-center space-x-6">
+            {navItems.map((item, index) => (
+              <button
+                key={index}
+                onClick={() => handleLinkClick(item.href)}
+                className="relative text-gray-300 hover:text-orange-500 transition duration-300 group"
+              >
+                {item.label}
+                <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-orange-500 transition-all duration-300 group-hover:w-full"></span>
+              </button>
+            ))}
+          </div>
 
-          {/* Desktop Buttons */}
           <div className="hidden md:flex items-center space-x-4">
             <NavButton
               href="/login"
@@ -48,7 +65,6 @@ const Navbar = () => {
             />
           </div>
 
-          {/* Mobile Menu Button */}
           <div className="md:hidden">
             <button
               className="mobile-menu-button transform transition duration-300 hover:rotate-90"
@@ -73,7 +89,6 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu (Sidebar) */}
       {isMobileMenuOpen && (
         <div
           className={`mobile-menu fixed inset-0 z-50 bg-gray-800 bg-opacity-90 p-5 transform transition-all duration-300 ${
@@ -98,8 +113,18 @@ const Navbar = () => {
               </svg>
             </button>
           </div>
-          <PrimaryNav /> {/* Mobile Nav Items */}
+
           <div className="flex flex-col items-center space-y-4 py-4">
+            {navItems.map((item, index) => (
+              <button
+                key={index}
+                onClick={() => handleLinkClick(item.href)}
+                className="text-gray-300 hover:text-orange-500 transition duration-300 transform hover:scale-105"
+              >
+                {item.label}
+              </button>
+            ))}
+
             <NavButton
               href="/login"
               text="Login"
@@ -112,6 +137,13 @@ const Navbar = () => {
             />
           </div>
         </div>
+      )}
+
+      {isMobileMenuOpen && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 z-40"
+          onClick={handleClickOutside}
+        ></div>
       )}
     </nav>
   );
