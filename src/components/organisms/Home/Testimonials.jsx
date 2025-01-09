@@ -19,6 +19,7 @@ const Testimonials = () => {
                   src={testimonial.avatar}
                   alt={testimonial.name}
                   className="w-16 h-16 rounded-full mr-6 border-2 border-gray-200"
+                  loading="lazy"
                 />
                 <div>
                   <div className="text-gray-900 text-xl font-semibold">{testimonial.name}</div>

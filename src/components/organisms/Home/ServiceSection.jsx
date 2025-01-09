@@ -12,11 +12,11 @@ const ServiceSection = () => {
               key={service.id}
               className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center justify-center transition duration-300 transform hover:scale-105 hover:shadow-lg hover:bg-gray-100"
             >
-              {/* Icon Animation */}
               <img
                 src={service.icon}
                 alt={service.title}
                 className="w-16 h-16 mb-4 transition duration-300 transform hover:rotate-6"
+                loading="lazy"
               />
               <h3 className="text-xl md:text-2xl font-semibold mb-2 text-gray-900">{service.title}</h3>
               <p className="text-gray-700 text-center">{service.description}</p>

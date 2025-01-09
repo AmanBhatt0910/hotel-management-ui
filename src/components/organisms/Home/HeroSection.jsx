@@ -12,27 +12,23 @@ const HeroSection = () => {
   useEffect(() => {
     const currentText = welcomeTexts[textIndex];
     if (!isDeleting && charIndex < currentText.length) {
-
       const typingTimeout = setTimeout(() => {
         setText((prev) => prev + currentText[charIndex]);
         setCharIndex((prev) => prev + 1);
       }, 125);
       return () => clearTimeout(typingTimeout);
     } else if (isDeleting && charIndex > 0) {
-
       const deletingTimeout = setTimeout(() => {
         setText((prev) => prev.slice(0, -1));
         setCharIndex((prev) => prev - 1);
       }, 50);
       return () => clearTimeout(deletingTimeout);
     } else if (!isDeleting && charIndex === currentText.length) {
-
       const pauseTimeout = setTimeout(() => {
         setIsDeleting(true);
       }, 1000);
       return () => clearTimeout(pauseTimeout);
     } else if (isDeleting && charIndex === 0) {
-
       setIsDeleting(false);
       setTextIndex((prev) => (prev + 1) % welcomeTexts.length);
     }
