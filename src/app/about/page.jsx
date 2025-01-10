@@ -48,7 +48,7 @@ const About = () => {
         <div className="bg-gray-700 rounded-lg p-8 text-center shadow-lg hover:shadow-[0_0_20px_rgba(255,165,0,0.5)] transition duration-300">
           <h3 className="text-2xl font-bold text-orange-500 mb-4">Restaurant</h3>
           <p className="text-gray-300">
-            Indulge in exquisite meals at our gourmet restaurant, where you'll
+            Indulge in exquisite meals at our gourmet restaurant, where you will
             find a variety of local and international dishes prepared with fresh,
             high-quality ingredients.
           </p>
