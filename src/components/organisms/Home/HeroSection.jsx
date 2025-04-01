@@ -37,11 +37,11 @@ const HeroSection = () => {
   return (
     <div
       className="relative h-[85vh] md:h-screen bg-cover bg-center overflow-hidden"
-      style={{ backgroundImage: "url('/Home/mountain-image.jpg')" }}
+      style={{ backgroundImage: "url('/Home/bg_main.jpeg')" }}
     >
-      <div className="absolute inset-0 bg-gradient-to-b from-gray-800 to-transparent"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-[#f0d9bc] to-transparent"></div>
       
-      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
+      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-black px-4">
         <h1 className="text-4xl md:text-6xl font-bold mb-4 leading-tight text-shadow-lg drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
           {text}
           <span className="animate-pulse">|</span>
@@ -51,7 +51,7 @@ const HeroSection = () => {
         
         <a
           href="/contact"
-          className="inline-block px-8 py-4 bg-orange-500 text-white rounded-full shadow-lg hover:bg-orange-400 hover:shadow-[0_0_20px_rgba(255,165,0,0.6)] transition duration-300 ease-in-out transform hover:scale-105"
+          className="inline-block px-8 py-4 bg-[#c41c2f] text-white rounded-full shadow-lg hover:bg-red-800 hover:shadow-[0_0_20px_rgba(255,165,0,0.6)] transition duration-300 ease-in-out transform hover:scale-105"
         >
           Book Now
         </a>
