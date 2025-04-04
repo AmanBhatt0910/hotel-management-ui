@@ -14,44 +14,42 @@ const GallerySection = ({ images }) => {
   };
 
   return (
-    <section id="gallery" className="py-16 bg-gray-100">
+    <section id="gallery" className="py-20 bg-[#f7ede2]">
       <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-4xl md:text-5xl font-bold mb-10 text-center text-gray-800">
+        <h2 className="text-4xl md:text-5xl font-extrabold mb-12 text-center text-[#c24e28] tracking-wide">
           Gallery
         </h2>
-        <div className="relative">
-          <div className="max-w-full h-[400px] md:h-[500px] overflow-hidden rounded-lg shadow-md">
+
+        <div className="relative rounded-3xl overflow-hidden shadow-lg border border-[#f1e6da]">
+          <div className="max-w-full h-[450px] md:h-[550px] overflow-hidden">
             <img
               src={images[currentImageIndex]}
               alt={`Gallery Image ${currentImageIndex + 1}`}
-              className="w-full h-full object-cover transition duration-500 ease-in-out transform hover:scale-110"
+              className="w-full h-full object-cover transition-transform duration-700 ease-in-out transform hover:scale-105"
             />
           </div>
 
-          {/* Previous Button */}
           <button
-            className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white bg-opacity-50 p-3 rounded-full shadow-md text-gray-800 hover:bg-gray-300 transition duration-300"
             onClick={previousImage}
+            className="absolute top-1/2 left-6 transform -translate-y-1/2 bg-white/60 text-[#c24e28] p-4 rounded-full hover:bg-[#d8ad63] hover:text-white shadow-md transition-all duration-300"
           >
             &lt;
           </button>
 
-          {/* Next Button */}
           <button
-            className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white bg-opacity-50 p-3 rounded-full shadow-md text-gray-800 hover:bg-gray-300 transition duration-300"
             onClick={nextImage}
+            className="absolute top-1/2 right-6 transform -translate-y-1/2 bg-white/60 text-[#c24e28] p-4 rounded-full hover:bg-[#d8ad63] hover:text-white shadow-md transition-all duration-300"
           >
             &gt;
           </button>
 
-          {/* Image Indicators */}
-          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+          <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-2">
             {images.map((_, index) => (
               <div
                 key={index}
                 onClick={() => setCurrentImageIndex(index)}
-                className={`w-3 h-3 rounded-full cursor-pointer ${
-                  currentImageIndex === index ? "bg-orange-500" : "bg-gray-400"
+                className={`w-4 h-4 rounded-full cursor-pointer ${
+                  currentImageIndex === index ? "bg-[#c24e28]" : "bg-[#d8ad63]"
                 } transition duration-300`}
               ></div>
             ))}

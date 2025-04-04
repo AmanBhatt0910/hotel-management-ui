@@ -1,89 +1,40 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React from "react";
+import { FaArrowRight } from "react-icons/fa";
 
 const HeroSection = () => {
-  const welcomeTexts = ["Welcome to", "Explore", "Relax at"];
-  const [text, setText] = useState("");
-  const [textIndex, setTextIndex] = useState(0);
-  const [charIndex, setCharIndex] = useState(0);
-  const [isDeleting, setIsDeleting] = useState(false);
-
-  useEffect(() => {
-    const currentText = welcomeTexts[textIndex];
-    if (!isDeleting && charIndex < currentText.length) {
-      const typingTimeout = setTimeout(() => {
-        setText((prev) => prev + currentText[charIndex]);
-        setCharIndex((prev) => prev + 1);
-      }, 125);
-      return () => clearTimeout(typingTimeout);
-    } else if (isDeleting && charIndex > 0) {
-      const deletingTimeout = setTimeout(() => {
-        setText((prev) => prev.slice(0, -1));
-        setCharIndex((prev) => prev - 1);
-      }, 50);
-      return () => clearTimeout(deletingTimeout);
-    } else if (!isDeleting && charIndex === currentText.length) {
-      const pauseTimeout = setTimeout(() => {
-        setIsDeleting(true);
-      }, 1000);
-      return () => clearTimeout(pauseTimeout);
-    } else if (isDeleting && charIndex === 0) {
-      setIsDeleting(false);
-      setTextIndex((prev) => (prev + 1) % welcomeTexts.length);
-    }
-  }, [charIndex, isDeleting, textIndex]);
-
   return (
     <div
-      className="relative h-[85vh] md:h-screen bg-cover bg-center overflow-hidden"
-      style={{ backgroundImage: "url('/Home/bg_main.jpeg')" }}
+      className="relative h-[90vh] md:h-screen bg-cover bg-center"
+      style={{ backgroundImage: "url('/Home/bg-1.jpg')" }}
     >
-      <div className="absolute inset-0 bg-gradient-to-b from-[#f0d9bc] to-transparent"></div>
-      
-      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-black px-4">
-        <h1 className="text-4xl md:text-6xl font-bold mb-4 leading-tight text-shadow-lg drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
-          {text}
-          <span className="animate-pulse">|</span>
-          <span> Parth Hotel</span>
-        </h1>
-        <p className="text-lg md:text-xl mb-8">Experience the tranquility of the mountains</p>
-        
+      <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
+
+      <div className="relative z-10 flex flex-col items-center justify-center h-full px-6 text-center text-white">
+      <h1 className="text-5xl md:text-7xl font-extrabold leading-tight tracking-wide mb-4 drop-shadow-xl">
+        Discover <span className="text-[#d8ad63]">Elegance</span><br />
+        at <span className="text-[#e85a4f]">Parth Hotel</span>
+      </h1>
+
+
+        <p className="text-lg md:text-2xl font-light max-w-2xl mx-auto mb-10 text-white/90">
+          Enjoy a stay filled with comfort, tranquility, and heartfelt hospitality.
+        </p>
+
         <a
           href="/contact"
-          className="inline-block px-8 py-4 bg-[#c41c2f] text-white rounded-full shadow-lg hover:bg-red-800 hover:shadow-[0_0_20px_rgba(255,165,0,0.6)] transition duration-300 ease-in-out transform hover:scale-105"
+          className="flex items-center gap-3 px-8 py-4 text-lg bg-[#c24e28] text-white font-semibold rounded-full shadow-xl hover:bg-[#a63e22] transition duration-300 hover:scale-105"
         >
-          Book Now
+          Book Now <FaArrowRight className="mt-[2px]" />
         </a>
 
-        <div className="mt-8 text-sm bg-gray-900/70 px-4 py-2 rounded-lg text-gray-200 shadow-md">
-          Discover more about our amenities and services below
-        </div>
-
-        <div className="flex items-center justify-center mt-8 space-x-4 bg-gray-900/70 px-4 py-2 rounded-lg text-gray-200 shadow-md">
-          <a
-            href="#gallery"
-            className="hover:text-white transition duration-300"
-            style={{ textShadow: "0 0 5px rgba(255,255,255,0.8)" }}
-          >
-            Gallery
-          </a>
-          <span className="text-gray-400">•</span>
-          <a
-            href="#services"
-            className="hover:text-white transition duration-300"
-            style={{ textShadow: "0 0 5px rgba(255,255,255,0.8)" }}
-          >
-            Services
-          </a>
-          <span className="text-gray-400">•</span>
-          <a
-            href="#faq"
-            className="hover:text-white transition duration-300"
-            style={{ textShadow: "0 0 5px rgba(255,255,255,0.8)" }}
-          >
-            FAQ
-          </a>
+        <div className="flex items-center justify-center mt-12 space-x-6 text-sm md:text-base text-white/80 bg-black/30 px-8 py-3 rounded-full shadow-md backdrop-blur-sm">
+          <a href="#gallery" className="hover:text-white transition">📸 Gallery</a>
+          <span>•</span>
+          <a href="#services" className="hover:text-white transition">🛎️ Services</a>
+          <span>•</span>
+          <a href="#faq" className="hover:text-white transition">❓ FAQ</a>
         </div>
       </div>
     </div>

@@ -1,7 +1,8 @@
-"use client"
+"use client";
 
 import React, { useState } from "react";
 import { faqs } from "@/data/HomePageData";
+import { FaPlus, FaMinus } from "react-icons/fa";
 
 const FAQSection = () => {
   const [openIndex, setOpenIndex] = useState(null);
@@ -11,31 +12,36 @@ const FAQSection = () => {
   };
 
   return (
-    <section id="faq" className="py-16 bg-gray-100">
-      <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-4xl md:text-5xl font-bold mb-10 text-center text-gray-800">
+    <section id="faq" className="py-20 bg-[#fdf3e7]">
+      <div className="max-w-6xl mx-auto px-6">
+        <h2 className="text-4xl md:text-5xl font-extrabold mb-12 text-center text-[#c24e28] tracking-wide">
           Frequently Asked Questions
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="bg-white rounded-lg shadow-md p-6 transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl"
+              className="bg-white border border-[#f1e6da] rounded-2xl shadow-lg p-6 transition-transform duration-300 hover:shadow-xl"
             >
-              <div
+              <button
                 onClick={() => toggleAnswer(index)}
-                className="cursor-pointer mb-3"
+                className="w-full text-left flex items-center justify-between text-xl md:text-2xl font-semibold text-gray-900 focus:outline-none"
               >
-                <h3 className="text-xl md:text-2xl font-semibold text-gray-900">
-                  Q. {faq.question}
-                </h3>
-                <div
-                  className={`text-gray-700 mt-3 transition-all duration-300 ease-in-out ${
-                    openIndex === index ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
-                  } overflow-hidden`}
-                >
-                  <p>{faq.answer}</p>
-                </div>
+                <span>Q. {faq.question}</span>
+                {openIndex === index ? (
+                  <FaMinus className="text-[#c24e28]" />
+                ) : (
+                  <FaPlus className="text-[#d8ad63]" />
+                )}
+              </button>
+
+              <div
+                className={`overflow-hidden transition-all duration-500 ${
+                  openIndex === index ? "max-h-[500px] opacity-100 mt-3" : "max-h-0 opacity-0"
+                }`}
+              >
+                <p className="text-gray-700 text-lg leading-relaxed">{faq.answer}</p>
               </div>
             </div>
           ))}
