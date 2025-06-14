@@ -58,7 +58,7 @@ export default function Home() {
       <Navbar />
       
       {/* Enhanced Hero Section with Advanced Animations */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center overflow-hidden pt-16 sm:pt-20 md:pt-0">
         <div className="absolute inset-0 z-0">
           <Image
             src="/hero-bg.svg"
@@ -69,28 +69,28 @@ export default function Home() {
           />
         </div>
 
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="container mx-auto px-4 sm:px-6 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <motion.div 
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="space-y-6"
+              className="space-y-4 sm:space-y-6 text-center lg:text-left"
             >
-              <h1 className="text-5xl md:text-6xl font-serif font-bold text-gray-900 leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-gray-900 leading-tight">
                 Experience <span className="text-[var(--parth-pink)]">Unparalleled</span> Luxury
               </h1>
-              <p className="text-xl text-gray-600 leading-relaxed">
+              <p className="text-lg sm:text-xl text-gray-600 leading-relaxed max-w-lg mx-auto lg:mx-0">
                 Immerse yourself in a world of elegance, comfort, and exceptional service. Your extraordinary journey begins here.
               </p>
-              <div className="flex space-x-4">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Link href="/booking">
-                  <button className="px-8 py-4 bg-[var(--parth-pink)] text-white rounded-full hover:shadow-xl transition-all transform hover:-translate-y-1">
+                  <button className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-[var(--parth-pink)] text-white rounded-full hover:shadow-xl transition-all transform hover:-translate-y-1">
                     Book Your Stay
                   </button>
                 </Link>
                 <Link href="/explore">
-                  <button className="px-8 py-4 border-2 border-[var(--parth-pink)] text-[var(--parth-pink)] rounded-full hover:bg-[var(--parth-pink)] hover:text-white transition-all">
+                  <button className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 border-2 border-[var(--parth-pink)] text-[var(--parth-pink)] rounded-full hover:bg-[var(--parth-pink)] hover:text-white transition-all">
                     Explore Resort
                   </button>
                 </Link>
@@ -101,10 +101,10 @@ export default function Home() {
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="bg-white/80 backdrop-blur-lg rounded-2xl shadow-2xl p-8 border border-gray-100"
+              className="bg-white/90 backdrop-blur-lg rounded-2xl shadow-2xl p-6 sm:p-8 border border-gray-100 mx-4 sm:mx-0"
             >
-              <form onSubmit={handleBookingSubmit} className="space-y-6">
-                <h2 className="text-3xl font-serif font-bold text-gray-800 text-center">
+              <form onSubmit={handleBookingSubmit} className="space-y-4 sm:space-y-6">
+                <h2 className="text-2xl sm:text-3xl font-serif font-bold text-gray-800 text-center">
                   Quick Reservation
                 </h2>
                 <div className="grid grid-cols-1 gap-4">
@@ -115,10 +115,10 @@ export default function Home() {
                         type="date"
                         value={checkInDate}
                         onChange={(e) => setCheckInDate(e.target.value)}
-                        className="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--parth-pink)] transition-all"
+                        className="w-full p-3 sm:p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--parth-pink)] transition-all"
                         required
                       />
-                      <FiCalendar className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400" />
+                      <FiCalendar className="absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 text-gray-400" />
                     </div>
                   </div>
                   <div className="relative">
@@ -128,10 +128,10 @@ export default function Home() {
                         type="date"
                         value={checkOutDate}
                         onChange={(e) => setCheckOutDate(e.target.value)}
-                        className="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--parth-pink)] transition-all"
+                        className="w-full p-3 sm:p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--parth-pink)] transition-all"
                         required
                       />
-                      <FiCalendar className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400" />
+                      <FiCalendar className="absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 text-gray-400" />
                     </div>
                   </div>
                   <div className="relative">
@@ -140,18 +140,18 @@ export default function Home() {
                       <select
                         value={guests}
                         onChange={(e) => setGuests(e.target.value)}
-                        className="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--parth-pink)] transition-all"
+                        className="w-full p-3 sm:p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--parth-pink)] transition-all appearance-none"
                       >
                         {['1', '2', '3', '4', '5+'].map(num => (
                           <option key={num} value={num}>{num} Guest{num !== '1' ? 's' : ''}</option>
                         ))}
                       </select>
-                      <FiUsers className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400" />
+                      <FiUsers className="absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none" />
                     </div>
                   </div>
                   <button 
                     type="submit"
-                    className="w-full bg-[var(--parth-pink)] text-white p-4 rounded-lg hover:bg-opacity-90 transition-all"
+                    className="w-full bg-[var(--parth-pink)] text-white p-3 sm:p-4 rounded-lg hover:bg-opacity-90 transition-all font-medium"
                   >
                     Check Availability
                   </button>
@@ -163,18 +163,18 @@ export default function Home() {
       </section>
 
       {/* Enhanced Features Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-serif font-bold text-gray-900 mb-4">
+      <section className="py-16 sm:py-20 bg-gray-50">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl font-serif font-bold text-gray-900 mb-4">
               Why Choose <span className="text-[var(--parth-pink)]">Parth</span> Hotels
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto px-4">
               We go beyond traditional hospitality, offering a blend of modern luxury, personalized service, and unforgettable experiences.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
             <FeatureCard 
               icon={<FiShield />}
               title="Safety First"
@@ -195,17 +195,17 @@ export default function Home() {
       </section>
 
       {/* Featured Rooms */}
-      <section className="py-24 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
+      <section className="py-16 sm:py-20 lg:py-24">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12 sm:mb-16">
             <span className="inline-block text-[var(--parth-pink)] font-medium mb-2">ACCOMMODATION</span>
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-gray-800">
+            <h2 className="text-3xl sm:text-4xl font-serif font-bold text-gray-800">
               Featured Rooms
             </h2>
-            <div className="mt-4 w-24 h-1 bg-[var(--parth-gold)] mx-auto"></div>
+            <div className="mt-4 w-20 sm:w-24 h-1 bg-[var(--parth-gold)] mx-auto"></div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             <RoomCard 
               title="Balcony Room"
               price={2499}
@@ -226,9 +226,9 @@ export default function Home() {
             />
           </div>
 
-          <div className="text-center mt-12">
+          <div className="text-center mt-8 sm:mt-12">
             <Link href="/rooms">
-              <button className="inline-flex items-center justify-center border-2 border-[var(--parth-pink)] text-[var(--parth-pink)] px-8 py-4 rounded-lg font-medium hover:bg-[var(--parth-pink)] hover:text-white transition-all">
+              <button className="inline-flex items-center justify-center border-2 border-[var(--parth-pink)] text-[var(--parth-pink)] px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-medium hover:bg-[var(--parth-pink)] hover:text-white transition-all">
                 View All Rooms <FiArrowRight className="ml-2" />
               </button>
             </Link>
@@ -237,7 +237,7 @@ export default function Home() {
       </section>
 
       {/* Restaurant Teaser */}
-      <section className="py-28 relative">
+      <section className="py-20 sm:py-24 lg:py-28 relative">
         <div className="absolute inset-0">
           <Image
             src="/images/restaurant-bg.jpg"
@@ -248,24 +248,24 @@ export default function Home() {
           <div className="absolute inset-0 bg-black bg-opacity-70"></div>
         </div>
         
-        <div className="container mx-auto px-4 relative">
-          <div className="max-w-xl mx-auto text-center text-white">
+        <div className="container mx-auto px-4 sm:px-6 relative">
+          <div className="max-w-2xl mx-auto text-center text-white">
             <span className="inline-block text-[var(--parth-pink)] font-medium mb-2">DINING</span>
-            <h2 className="text-3xl md:text-4xl font-serif font-bold">
+            <h2 className="text-3xl sm:text-4xl font-serif font-bold">
               Fine Dining Experience
             </h2>
-            <div className="mt-4 w-24 h-1 bg-[var(--parth-gold)] mx-auto"></div>
-            <p className="mt-6 text-lg">
+            <div className="mt-4 w-20 sm:w-24 h-1 bg-[var(--parth-gold)] mx-auto"></div>
+            <p className="mt-6 text-lg sm:text-xl leading-relaxed px-4">
               Indulge in a culinary journey at our restaurant, where our talented chefs create exquisite dishes using the finest ingredients.
             </p>
-            <div className="mt-8 flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+            <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4 px-4">
               <Link href="/restaurant">
-                <button className="bg-[var(--parth-pink)] text-white px-8 py-4 rounded-lg font-medium hover:bg-opacity-90 transition-all shadow-lg flex items-center justify-center">
+                <button className="w-full sm:w-auto bg-[var(--parth-pink)] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-medium hover:bg-opacity-90 transition-all shadow-lg flex items-center justify-center">
                   Explore Menu <FiArrowRight className="ml-2" />
                 </button>
               </Link>
               <Link href="/restaurant/reservation">
-                <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-medium hover:bg-white hover:text-[var(--parth-pink)] transition-all flex items-center justify-center">
+                <button className="w-full sm:w-auto border-2 border-white text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-medium hover:bg-white hover:text-[var(--parth-pink)] transition-all flex items-center justify-center">
                   Reserve a Table
                 </button>
               </Link>
@@ -275,17 +275,17 @@ export default function Home() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-24 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
+      <section className="py-16 sm:py-20 lg:py-24 bg-gray-50">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12 sm:mb-16">
             <span className="inline-block text-[var(--parth-pink)] font-medium mb-2">TESTIMONIALS</span>
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-gray-800">
+            <h2 className="text-3xl sm:text-4xl font-serif font-bold text-gray-800">
               What Our Guests Say
             </h2>
-            <div className="mt-4 w-24 h-1 bg-[var(--parth-gold)] mx-auto"></div>
+            <div className="mt-4 w-20 sm:w-24 h-1 bg-[var(--parth-gold)] mx-auto"></div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             <TestimonialCard 
               name="Suraj Joshi"
               location="New Delhi"

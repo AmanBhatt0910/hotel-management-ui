@@ -25,6 +25,18 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Close mobile menu when clicking outside or on link
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {
+        setIsMenuOpen(false);
+      }
+    };
+    
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -33,10 +45,10 @@ export default function Navbar() {
   const getNavbarStyle = () => {
     if (isHomePage) {
       // Home page: always white background since page background is white
-      return 'bg-white shadow-md py-2';
+      return 'bg-white shadow-md py-2 sm:py-3';
     } else {
       // Other pages: transparent when not scrolled, white when scrolled
-      return isScrolled ? 'bg-white shadow-md py-2' : 'bg-transparent py-4';
+      return isScrolled ? 'bg-white shadow-md py-2 sm:py-3' : 'bg-transparent py-3 sm:py-4';
     }
   };
 
@@ -62,22 +74,22 @@ export default function Navbar() {
 
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 ${getNavbarStyle()}`}>
-      <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
+      <div className="container mx-auto px-3 sm:px-4 md:px-6 flex justify-between items-center">
         {/* Logo */}
-        <div className="flex items-center">
+        <div className="flex items-center flex-shrink-0">
           <Link href="/" className="block">
             <Image 
               src="/home-logo.jpeg" 
               alt="Parth Hotel and Restaurant" 
-              width={120} 
-              height={60} 
-              className="h-12 md:h-16 w-auto rounded-lg hover:opacity-90 transition-opacity duration-300"
+              width={100} 
+              height={50} 
+              className="h-10 sm:h-12 md:h-14 lg:h-16 w-auto rounded-lg hover:opacity-90 transition-opacity duration-300"
             />
           </Link>
         </div>
 
         {/* Desktop Navigation */}
-        <div className={`hidden md:flex space-x-8 transition-colors duration-300 ${getTextColor()}`}>
+        <div className={`hidden md:flex space-x-4 lg:space-x-8 transition-colors duration-300 ${getTextColor()}`}>
           <NavLink href="/" isHomePage={isHomePage} isScrolled={isScrolled}>Home</NavLink>
           <NavLink href="/rooms" isHomePage={isHomePage} isScrolled={isScrolled}>Rooms</NavLink>
           <NavLink href="/restaurant" isHomePage={isHomePage} isScrolled={isScrolled}>Restaurant</NavLink>
@@ -85,10 +97,10 @@ export default function Navbar() {
           <NavLink href="/contact" isHomePage={isHomePage} isScrolled={isScrolled}>Contact</NavLink>
         </div>
 
-        {/* Book Now Button */}
-        <div className="hidden md:block">
+        {/* Book Now Button - Desktop */}
+        <div className="hidden md:block flex-shrink-0">
           <Link href="/booking">
-            <button className="bg-[var(--parth-pink)] text-white px-6 py-2 rounded-full font-medium hover:bg-opacity-90 transition-all shadow-md">
+            <button className="bg-[var(--parth-pink)] text-white px-4 lg:px-6 py-2 rounded-full font-medium hover:bg-opacity-90 transition-all shadow-md text-sm lg:text-base">
               Book Now
             </button>
           </Link>
@@ -96,7 +108,7 @@ export default function Navbar() {
 
         {/* Mobile Menu Button */}
         <button
-          className={`md:hidden transition-colors duration-300 ${getMobileButtonColor()}`}
+          className={`md:hidden transition-colors duration-300 p-2 ${getMobileButtonColor()}`}
           onClick={toggleMenu}
           aria-label="Toggle menu"
         >
@@ -107,26 +119,41 @@ export default function Navbar() {
       {/* Mobile Menu */}
       <AnimatePresence>
         {isMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="md:hidden bg-white shadow-lg"
-          >
-            <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
-              <MobileNavLink href="/" onClick={toggleMenu}>Home</MobileNavLink>
-              <MobileNavLink href="/rooms" onClick={toggleMenu}>Rooms</MobileNavLink>
-              <MobileNavLink href="/restaurant" onClick={toggleMenu}>Restaurant</MobileNavLink>
-              <MobileNavLink href="/about" onClick={toggleMenu}>About</MobileNavLink>
-              <MobileNavLink href="/contact" onClick={toggleMenu}>Contact</MobileNavLink>
-              <Link href="/booking" onClick={toggleMenu}>
-                <button className="bg-[var(--parth-pink)] text-white px-6 py-2 rounded-full font-medium hover:bg-opacity-90 transition-all shadow-md w-full">
-                  Book Now
-                </button>
-              </Link>
-            </div>
-          </motion.div>
+          <>
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="md:hidden fixed inset-0 bg-black bg-opacity-50 z-40"
+              onClick={toggleMenu}
+            />
+            
+            {/* Menu Content */}
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3 }}
+              className="md:hidden bg-white shadow-lg relative z-50 border-t border-gray-100"
+            >
+              <div className="container mx-auto px-4 py-6 flex flex-col space-y-4">
+                <MobileNavLink href="/" onClick={toggleMenu}>Home</MobileNavLink>
+                <MobileNavLink href="/rooms" onClick={toggleMenu}>Rooms</MobileNavLink>
+                <MobileNavLink href="/restaurant" onClick={toggleMenu}>Restaurant</MobileNavLink>
+                <MobileNavLink href="/about" onClick={toggleMenu}>About</MobileNavLink>
+                <MobileNavLink href="/contact" onClick={toggleMenu}>Contact</MobileNavLink>
+                <div className="pt-4 border-t border-gray-200">
+                  <Link href="/booking" onClick={toggleMenu}>
+                    <button className="bg-[var(--parth-pink)] text-white px-6 py-3 rounded-full font-medium hover:bg-opacity-90 transition-all shadow-md w-full">
+                      Book Now
+                    </button>
+                  </Link>
+                </div>
+              </div>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </nav>
@@ -148,7 +175,7 @@ function NavLink({ href, children, isHomePage, isScrolled }) {
   return (
     <Link 
       href={href}
-      className={`font-medium transition-colors duration-300 ${getHoverColor()}`}
+      className={`font-medium transition-colors duration-300 text-sm lg:text-base ${getHoverColor()}`}
     >
       {children}
     </Link>
@@ -161,7 +188,7 @@ function MobileNavLink({ href, children, onClick }) {
     <Link
       href={href}
       onClick={onClick}
-      className="text-gray-800 font-medium py-2 hover:text-[var(--parth-pink)] transition-colors block"
+      className="text-gray-800 font-medium py-3 hover:text-[var(--parth-pink)] transition-colors block text-lg border-b border-gray-100 last:border-b-0"
     >
       {children}
     </Link>
