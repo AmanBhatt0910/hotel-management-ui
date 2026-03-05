@@ -91,7 +91,7 @@ export default function ContactPage() {
           >
             <FiMapPin className="mx-auto text-4xl text-[var(--parth-pink)] mb-4" />
             <h3 className="text-xl font-bold text-gray-800 mb-2">Address</h3>
-            <p className="text-gray-600">123 Hospitality Lane, City Center, State 10001</p>
+            <p className="text-gray-600">Pande Toli, Almora, India, 263601</p>
           </motion.div>
           <motion.div 
             initial={{ opacity: 0, y: 50 }}
@@ -101,7 +101,7 @@ export default function ContactPage() {
           >
             <FiPhone className="mx-auto text-4xl text-[var(--parth-gold)] mb-4" />
             <h3 className="text-xl font-bold text-gray-800 mb-2">Phone</h3>
-            <p className="text-gray-600">(555) 123-4567</p>
+            <p className="text-gray-600">(+91) 9557884358</p>
           </motion.div>
           <motion.div 
             initial={{ opacity: 0, y: 50 }}
@@ -111,7 +111,7 @@ export default function ContactPage() {
           >
             <FiMail className="mx-auto text-4xl text-[var(--parth-pink)] mb-4" />
             <h3 className="text-xl font-bold text-gray-800 mb-2">Email</h3>
-            <p className="text-gray-600">contact@parthhotel.com</p>
+            <p className="text-gray-600">info@parthhotel.com</p>
           </motion.div>
           <motion.div 
             initial={{ opacity: 0, y: 50 }}
