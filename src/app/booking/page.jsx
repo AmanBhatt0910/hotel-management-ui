@@ -119,4 +119,4 @@ export default function BookingPage() {
       <Footer />
     </motion.main>
   );
-}about
+}
