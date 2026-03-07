@@ -1,4 +1,5 @@
 import './globals.css';
+import Analytics from '@vercel/analytics';
 
 export const metadata = {
   title: 'Parth Hotel and Restaurant',
@@ -10,6 +11,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         {children}
+        <Analytics/>
       </body>
     </html>
   );
