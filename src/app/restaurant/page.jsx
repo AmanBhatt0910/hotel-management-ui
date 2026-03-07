@@ -82,7 +82,7 @@ export default function RestaurantPage() {
       {/* Hero Section */}
       <section className="relative h-[60vh] overflow-hidden">
         <Image 
-          src="/restaurant.png" 
+          src="/restaurant.jpg" 
           alt="Parth Hotel Restaurant" 
           fill 
           className="object-cover" 
@@ -151,69 +151,52 @@ export default function RestaurantPage() {
       </section>
 
       {/* Menu Section */}
-      <section className="container mx-auto px-4 py-16">
+      <section id="menu" className="container mx-auto px-4 py-20">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-serif font-bold text-gray-800 mb-4">
             Our <span className="text-[var(--parth-pink)]">Menu</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            A carefully curated selection of dishes that celebrate flavor, creativity, and passion.
+            Explore our complete restaurant menu. Click any page to view it in full size.
           </p>
         </div>
 
-        {/* Category Selector */}
-        <div className="flex justify-center mb-12">
-          <div className="bg-white rounded-full shadow-lg p-2 inline-flex space-x-2">
-            {menuCategories.map((category) => (
-              <button
-                key={category.name}
-                onClick={() => setSelectedCategory(category.name)}
-                className={`px-6 py-3 rounded-full transition-all ${
-                  selectedCategory === category.name 
-                    ? 'bg-[var(--parth-pink)] text-white' 
-                    : 'text-gray-600 hover:bg-gray-100'
-                }`}
-              >
-                {category.name}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* Menu Items */}
-        <div className="grid md:grid-cols-2 gap-8">
-          {menuCategories
-            .find(category => category.name === selectedCategory)
-            .items.map((item, index) => (
-              <motion.div
-                key={item.name}
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-white rounded-2xl shadow-lg overflow-hidden flex"
-              >
-                <div className="w-1/3 relative">
-                  <Image 
-                    src={item.image} 
-                    alt={item.name} 
-                    fill 
-                    className="object-cover" 
+        {/* Menu Pages */}
+        <div className="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto">
+          
+          {[
+            "/menu/menu1.jpeg",
+            "/menu/menu2.jpeg",
+            "/menu/menu3.jpeg",
+            "/menu/menu4.jpeg"
+          ].map((src, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+              className="relative rounded-2xl overflow-hidden shadow-xl group"
+            >
+              <a href={src} target="_blank">
+                <div className="relative w-full h-[600px]">
+                  <Image
+                    src={src}
+                    alt={`Restaurant Menu Page ${index + 1}`}
+                    fill
+                    className="object-contain bg-white"
                   />
                 </div>
-                <div className="w-2/3 p-6">
-                  <div className="flex justify-between items-start mb-4">
-                    <h3 className="text-2xl font-bold text-gray-800">{item.name}</h3>
-                    <span className="text-[var(--parth-pink)] font-bold text-2xl">
-                      ₹{item.price}
-                    </span>
-                  </div>
-                  <p className="text-gray-600 mb-4">{item.description}</p>
-                  <button className="bg-[var(--parth-bg)] text-[var(--parth-pink)] px-4 py-2 rounded-full hover:bg-opacity-90 transition-all">
-                    Order Now
-                  </button>
+
+                {/* Hover overlay */}
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition flex items-center justify-center">
+                  <span className="opacity-0 group-hover:opacity-100 text-white text-lg font-semibold">
+                    View Full Menu Page
+                  </span>
                 </div>
-              </motion.div>
-            ))}
+              </a>
+            </motion.div>
+          ))}
         </div>
       </section>
 

@@ -99,60 +99,58 @@ export default function Home() {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="bg-white/90 backdrop-blur-lg rounded-2xl shadow-2xl p-6 sm:p-8 border border-gray-100 mx-4 sm:mx-0"
             >
-              <form onSubmit={handleBookingSubmit} className="space-y-4 sm:space-y-6">
-                <h2 className="text-2xl sm:text-3xl font-serif font-bold text-gray-800 text-center">
-                  Quick Reservation
-                </h2>
-                <div className="grid grid-cols-1 gap-4">
-                  <div className="relative">
-                    <label className="block text-sm font-medium text-gray-600 mb-2">Check In</label>
-                    <div className="relative">
-                      <input
-                        type="date"
-                        value={checkInDate}
-                        onChange={(e) => setCheckInDate(e.target.value)}
-                        className="w-full p-3 sm:p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--parth-pink)] transition-all"
-                        required
-                      />
-                      <FiCalendar className="absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 text-gray-400" />
-                    </div>
+              <motion.div 
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                className="bg-white/90 backdrop-blur-lg rounded-2xl shadow-2xl p-6 sm:p-8 border border-gray-100 mx-4 sm:mx-0"
+              >
+                <div className="space-y-6 text-center">
+
+                  <h2 className="text-2xl sm:text-3xl font-serif font-bold text-gray-800">
+                    Reserve Your Stay
+                  </h2>
+
+                  <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+                    Online booking is currently unavailable.  
+                    Please contact us directly and our team will assist you with availability and reservation.
+                  </p>
+
+                  {/* Phone */}
+                  <div className="bg-[var(--parth-bg)] rounded-xl p-4">
+                    <p className="text-gray-500 text-sm">Call us for reservations</p>
+                    <p className="text-2xl font-bold text-[var(--parth-pink)] mt-1">
+                      +91 9557884358
+                    </p>
                   </div>
-                  <div className="relative">
-                    <label className="block text-sm font-medium text-gray-600 mb-2">Check Out</label>
-                    <div className="relative">
-                      <input
-                        type="date"
-                        value={checkOutDate}
-                        onChange={(e) => setCheckOutDate(e.target.value)}
-                        className="w-full p-3 sm:p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--parth-pink)] transition-all"
-                        required
-                      />
-                      <FiCalendar className="absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 text-gray-400" />
-                    </div>
+
+                  {/* Buttons */}
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
+
+                    <a
+                      href="tel:+919557884358"
+                      className="w-full sm:w-auto px-6 py-3 bg-[var(--parth-pink)] text-white rounded-lg font-medium hover:bg-opacity-90 transition-all shadow-md"
+                    >
+                      Call Now
+                    </a>
+
+                    <a
+                      href="https://wa.me/919557884358?text=Hello%20Parth%20Hotel,%0A%0AI%20would%20like%20to%20inquire%20about%20room%20availability.%0A%0ACheck-in%20Date:%20%0ACheck-out%20Date:%20%0ANumber%20of%20Guests:%20%0A%0APlease%20let%20me%20know%20availability%20and%20pricing.%0A%0AThank%20you."
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full sm:w-auto px-6 py-3 border-2 border-[var(--parth-pink)] text-[var(--parth-pink)] rounded-lg font-medium hover:bg-[var(--parth-pink)] hover:text-white transition-all"
+                    >
+                      WhatsApp Us
+                    </a>
+
                   </div>
-                  <div className="relative">
-                    <label className="block text-sm font-medium text-gray-600 mb-2">Guests</label>
-                    <div className="relative">
-                      <select
-                        value={guests}
-                        onChange={(e) => setGuests(e.target.value)}
-                        className="w-full p-3 sm:p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--parth-pink)] transition-all appearance-none"
-                      >
-                        {['1', '2', '3', '4', '5+'].map(num => (
-                          <option key={num} value={num}>{num} Guest{num !== '1' ? 's' : ''}</option>
-                        ))}
-                      </select>
-                      <FiUsers className="absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none" />
-                    </div>
-                  </div>
-                  <button 
-                    type="submit"
-                    className="w-full bg-[var(--parth-pink)] text-white p-3 sm:p-4 rounded-lg hover:bg-opacity-90 transition-all font-medium"
-                  >
-                    Check Availability
-                  </button>
+
+                  <p className="text-xs text-gray-500">
+                    Our staff will respond quickly and help complete your reservation.
+                  </p>
+
                 </div>
-              </form>
+              </motion.div>
             </motion.div>
           </div>
         </div>
