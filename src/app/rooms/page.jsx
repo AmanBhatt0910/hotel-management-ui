@@ -23,7 +23,7 @@ const roomTypes = [
     description: 'Spacious room with modern amenities and city views.',
     price: 149,
     capacity: 2,
-    image: '/images/deluxe-room.jpg',
+    image: '/hotel-images/room-inside.jpg',
     features: ['King Size Bed', 'City View', 'Free WiFi', 'Smart TV']
   },
   {
@@ -32,7 +32,7 @@ const roomTypes = [
     description: 'Luxurious suite with separate living area and premium services.',
     price: 249,
     capacity: 3,
-    image: '/images/premier-suite.jpg',
+    image: '/hotel-images/room-view-1.jpg',
     features: ['King Size Bed', 'Living Area', 'Balcony', 'Mini Bar']
   },
   {
@@ -41,7 +41,7 @@ const roomTypes = [
     description: 'Elegant room designed for business and comfort.',
     price: 199,
     capacity: 2,
-    image: '/images/executive-room.jpg',
+    image: '/hotel-images/room-inside-1.jpg',
     features: ['Queen Size Bed', 'Work Desk', 'Complimentary Breakfast', 'Smart TV']
   },
   {
@@ -50,7 +50,7 @@ const roomTypes = [
     description: 'Spacious room perfect for families with multiple beds.',
     price: 279,
     capacity: 4,
-    image: '/images/family-room.jpg',
+    image: '/hotel-images/room-view-2.jpg',
     features: ['Multiple Beds', 'Living Area', 'Kitchenette', 'Kids Play Area']
   },
   {
@@ -59,7 +59,7 @@ const roomTypes = [
     description: 'Comfortable suite with modern design and extra space.',
     price: 179,
     capacity: 2,
-    image: '/images/junior-suite.jpg',
+    image: '/hotel-images/room-inside.jpg',
     features: ['King Size Bed', 'Sitting Area', 'Spa-like Bathroom', 'Free WiFi']
   },
   {
@@ -68,7 +68,7 @@ const roomTypes = [
     description: 'Ultimate luxury with panoramic views and exclusive services.',
     price: 499,
     capacity: 4,
-    image: '/images/presidential-suite.jpg',
+    image: '/hotel-images/room-view-1.jpg',
     features: ['Large Bedroom', 'Private Terrace', 'Personal Butler', 'Jacuzzi']
   }
 ];

@@ -151,17 +151,17 @@ export default function AboutPage() {
             {
               name: 'Amit Pandey',
               position: 'General Manager',
-              image: '/images/team-member-1.jpg'
+              image: '/home-logo.jpeg'
             },
             {
               name: 'Rahul Rawat',
               position: 'Head Chef',
-              image: '/images/team-member-2.jpg'
+              image: '/home-logo.jpeg'
             },
             {
               name: 'Aman Bhatt',
               position: 'Web Developer',
-              image: '/images/team-member-3.jpg'
+              image: '/home-logo.jpeg'
             }
           ].map((member, index) => (
             <motion.div

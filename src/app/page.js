@@ -203,19 +203,19 @@ export default function Home() {
             <RoomCard 
               title="Balcony Room"
               price={2499}
-              image="/images/premier-suite.jpg"
+              image="/hotel-images/room-view-1.jpg"
               slug="premier-suite"
             />
             <RoomCard 
               title="Deluxe Room"
               price={1499}
-              image="/images/deluxe-room.jpg"
+              image="/hotel-images/room-inside.jpg"
               slug="deluxe-room"
             />
             <RoomCard 
               title="Executive Room"
               price={1999}
-              image="/images/executive-room.jpg"
+              image="/hotel-images/room-inside-1.jpg"
               slug="executive-room"
             />
           </div>

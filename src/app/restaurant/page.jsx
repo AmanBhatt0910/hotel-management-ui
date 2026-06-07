@@ -21,13 +21,13 @@ const menuCategories = [
         name: 'Naan',
         description: 'Freshly baked traditional Indian bread with garlic and herbs.',
         price: 449,
-        image: '/images/garlic-naan.jpg'
+        image: '/restaurant.jpg'
       },
       {
         name: 'Pakodi',
         description: 'Crispy gram flour fritters with mixed vegetables and mint chutney.',
         price: 99,
-        image: '/images/vegetable-pakodi.jpg'
+        image: '/restaurant.jpg'
       }
     ]
   },
@@ -38,13 +38,13 @@ const menuCategories = [
         name: 'Chana Masala',
         description: 'Spiced chickpeas in rich tomato gravy with aromatic Indian spices.',
         price: 299,
-        image: '/images/chana-masala.jpg'
+        image: '/restaurant.jpg'
       },
       {
         name: 'Palak Paneer',
         description: 'Fresh cottage cheese cubes in creamy spinach curry with garam masala.',
         price: 349,
-        image: '/images/palak-paneer.jpg'
+        image: '/restaurant.jpg'
       }
     ]
   },
@@ -55,13 +55,13 @@ const menuCategories = [
         name: 'Gajar ka Halwa',
         description: 'Traditional carrot pudding slow-cooked with milk and cardamom.',
         price: 89,
-        image: '/images/gajar-halwa.jpg'
+        image: '/restaurant.jpg'
       },
       {
         name: 'Baal Mithai',
         description: 'Sweet Kumaoni delicacy with roasted khoya and sugar balls coating.',
         price: 29,
-        image: '/images/baal-mithai.jpg'
+        image: '/restaurant.jpg'
       }
     ]
   }
