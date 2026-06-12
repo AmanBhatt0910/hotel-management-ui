@@ -21,7 +21,7 @@ const roomTypes = [
     id: 'deluxe',
     title: 'Deluxe Room',
     description: 'Spacious room with modern amenities and city views.',
-    price: 149,
+    price: 1499,
     capacity: 2,
     image: '/hotel-images/room-inside.jpg',
     features: ['King Size Bed', 'City View', 'Free WiFi', 'Smart TV']
@@ -30,7 +30,7 @@ const roomTypes = [
     id: 'premier',
     title: 'Premier Suite',
     description: 'Luxurious suite with separate living area and premium services.',
-    price: 249,
+    price: 2499,
     capacity: 3,
     image: '/hotel-images/room-view-1.jpg',
     features: ['King Size Bed', 'Living Area', 'Balcony', 'Mini Bar']
@@ -39,7 +39,7 @@ const roomTypes = [
     id: 'executive',
     title: 'Executive Room',
     description: 'Elegant room designed for business and comfort.',
-    price: 199,
+    price: 1999,
     capacity: 2,
     image: '/hotel-images/room-inside-1.jpg',
     features: ['Queen Size Bed', 'Work Desk', 'Complimentary Breakfast', 'Smart TV']
@@ -48,7 +48,7 @@ const roomTypes = [
     id: 'family',
     title: 'Family Room',
     description: 'Spacious room perfect for families with multiple beds.',
-    price: 279,
+    price: 2799,
     capacity: 4,
     image: '/hotel-images/room-view-2.jpg',
     features: ['Multiple Beds', 'Living Area', 'Kitchenette', 'Kids Play Area']
@@ -57,7 +57,7 @@ const roomTypes = [
     id: 'junior-suite',
     title: 'Junior Suite',
     description: 'Comfortable suite with modern design and extra space.',
-    price: 179,
+    price: 1799,
     capacity: 2,
     image: '/hotel-images/room-inside.jpg',
     features: ['King Size Bed', 'Sitting Area', 'Spa-like Bathroom', 'Free WiFi']
@@ -66,7 +66,7 @@ const roomTypes = [
     id: 'presidential',
     title: 'Presidential Suite',
     description: 'Ultimate luxury with panoramic views and exclusive services.',
-    price: 499,
+    price: 4999,
     capacity: 4,
     image: '/hotel-images/room-view-1.jpg',
     features: ['Large Bedroom', 'Private Terrace', 'Personal Butler', 'Jacuzzi']
