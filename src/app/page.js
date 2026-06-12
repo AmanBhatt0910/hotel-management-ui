@@ -201,20 +201,20 @@ export default function Home() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             <RoomCard 
-              title="Balcony Room"
-              price={2499}
+              title="Deluxe Mountain View Room"
+              price={3499}
               image="/hotel-images/room-view-1.jpg"
               slug="premier-suite"
             />
             <RoomCard 
               title="Deluxe Room"
-              price={1499}
+              price={2999}
               image="/hotel-images/room-inside.jpg"
               slug="deluxe-room"
             />
             <RoomCard 
-              title="Executive Room"
-              price={1999}
+              title="Standard Room"
+              price={2499}
               image="/hotel-images/room-inside-1.jpg"
               slug="executive-room"
             />
