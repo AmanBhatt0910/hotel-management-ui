@@ -122,7 +122,11 @@ export default function Home() {
                     <p className="text-2xl font-bold text-[var(--parth-pink)] mt-1">
                       +91 9557884358
                     </p>
+                    <p className="text-2xl font-bold text-[var(--parth-pink)] mt-1">
+                      +91 9756705659
+                    </p>
                   </div>
+                  
 
                   {/* Buttons */}
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">

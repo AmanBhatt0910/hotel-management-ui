@@ -102,6 +102,7 @@ export default function ContactPage() {
             <FiPhone className="mx-auto text-4xl text-[var(--parth-gold)] mb-4" />
             <h3 className="text-xl font-bold text-gray-800 mb-2">Phone</h3>
             <p className="text-gray-600">(+91) 9557884358</p>
+            <p className="text-gray-600">(+91) 9756705659</p>
           </motion.div>
           <motion.div 
             initial={{ opacity: 0, y: 50 }}
