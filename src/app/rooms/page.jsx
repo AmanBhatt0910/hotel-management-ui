@@ -38,38 +38,11 @@ const roomTypes = [
   {
     id: 'Deluxe',
     title: 'Deluxe Room',
-    description: 'Elegant room designed for business and comfort.',
-    price: 2999,
-    capacity: 2,
-    image: '/hotel-images/room-inside-1.jpg',
-    features: ['Queen Size Bed', 'Work Desk', 'Complimentary Breakfast', 'Smart TV']
-  },
-  {
-    id: 'Deluxe',
-    title: 'Deluxe Room',
     description: 'Spacious room perfect for families with multiple beds.',
     price: 2999,
     capacity: 2,
     image: '/hotel-images/room-view-2.jpg',
     features: ['Multiple Beds', 'Living Area', 'Kitchenette', 'Kids Play Area']
-  },
-  {
-    id: 'Standard',
-    title: 'Standard Room',
-    description: 'Comfortable suite with modern design and extra space.',
-    price: 2499,
-    capacity: 2,
-    image: '/hotel-images/room-inside.jpg',
-    features: ['King Size Bed', 'Sitting Area', 'Spa-like Bathroom', 'Free WiFi']
-  },
-  {
-    id: 'Deluxe',
-    title: 'Deluxe Mountain View Room',
-    description: 'Ultimate luxury with panoramic views and exclusive services.',
-    price: 3499,
-    capacity: 2,
-    image: '/hotel-images/room-view-1.jpg',
-    features: ['Large Bedroom', 'Private Terrace', 'Personal Butler', 'Jacuzzi']
   }
 ];
 
