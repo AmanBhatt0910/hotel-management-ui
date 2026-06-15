@@ -213,13 +213,13 @@ export default function Home() {
             <RoomCard 
               title="Deluxe Room"
               price={2999}
-              image="/hotel-images/room-inside.jpg"
+              image="/hotel-images/room-inside-1.jpg"
               slug="deluxe-room"
-            />
+              />
             <RoomCard 
               title="Standard Room"
               price={2499}
-              image="/hotel-images/room-inside-1.jpg"
+              image="/hotel-images/room-inside.jpg"
               slug="executive-room"
             />
           </div>
