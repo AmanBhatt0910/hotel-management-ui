@@ -166,9 +166,9 @@ export default function RestaurantPage() {
           
           {[
             "/menu/menu1.jpeg",
-            "/menu/menu2.jpeg",
-            "/menu/menu3.jpeg",
-            "/menu/menu4.jpeg"
+            "/menu/menu2.png",
+            "/menu/menu3.png",
+            "/menu/menu4.png"
           ].map((src, index) => (
             <motion.div
               key={index}
