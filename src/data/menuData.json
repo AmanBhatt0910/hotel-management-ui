@@ -1,0 +1,225 @@
+{
+  "restaurant": {
+    "name": "Parth",
+    "subtitle": "HOTEL & RESTAURANT",
+    "tagline": "Authentic Flavours of Uttarakhand in the Lap of the Himalayas",
+    "phone": "+91 9756705659",
+    "website": "parthhoteljageshwar.com",
+    "address": "Village Toli, Post Panuwanaula, District Almora"
+  },
+  "categories": [
+    {
+      "name": "BEVERAGES",
+      "icon": "☕",
+      "columns": 2,
+      "items": [
+        { "name": "Tea", "price": 25 },
+        { "name": "Masala Tea", "price": 30 },
+        { "name": "Black Tea", "price": 25 },
+        { "name": "Hot Coffee", "price": 50 },
+        { "name": "Cold Coffee", "price": 110 },
+        { "name": "Cold Coffee with ice cream", "price": 130 },
+        { "name": "Black coffee", "price": 40 },
+        { "name": "Lemon tea", "price": 30 },
+        { "name": "Herbal tea", "price": 50 },
+        { "name": "Special tea", "price": 50 },
+        { "name": "Hot Milk", "price": 70, "subtitle": "per glass" },
+        { "name": "Lime Water (sweet and sour)", "price": 50, "subtitle": "per glass" },
+        { "name": "Fresh lime soda", "price": 70 },
+        { "name": "Vanilla shake", "price": 100 },
+        { "name": "Strawberry shake", "price": 110 },
+        { "name": "Chocolate shake", "price": 120 },
+        { "name": "Oreo shake", "price": 130 },
+        { "name": "Banana shake", "price": 100 },
+        { "name": "Butterscotch shake", "price": 150 },
+        { "name": "Sweet Lassi", "price": 70 },
+        { "name": "Salted Lassi", "price": 70 }
+      ]
+    },
+    {
+      "name": "BREAKFAST",
+      "icon": "🍳",
+      "columns": 2,
+      "items": [
+        { "name": "Aloo paratha", "price": 70 },
+        { "name": "Onion paratha", "price": 80 },
+        { "name": "Paneer paratha", "price": 110 },
+        { "name": "Mix paratha", "price": 90 },
+        { "name": "Plain paratha", "price": 50 },
+        { "name": "Gobi paratha", "price": 80 },
+        { "name": "Bread butter", "price": 50, "subtitle": "2 slices" },
+        { "name": "Bread & Jam", "price": 60, "subtitle": "2 slices" },
+        { "name": "Bun Makhan", "price": 50 },
+        { "name": "Aloo Poori", "price": 120, "subtitle": "5 poori" },
+        { "name": "Poha", "price": 130 },
+        { "name": "Plain Maggi", "price": 50 },
+        { "name": "Vegetable Maggi", "price": 80 },
+        { "name": "Masala Maggi", "price": 80 }
+      ]
+    },
+    {
+      "name": "SANDWICH",
+      "icon": "🥪",
+      "columns": 2,
+      "items": [
+        { "name": "Cold veg sandwich", "price": 70 },
+        { "name": "Cheese veg sandwich", "price": 90 },
+        { "name": "Aloo sandwich (grilled)", "price": 80 },
+        { "name": "Grilled veg sandwich", "price": 90 },
+        { "name": "Burger", "price": 90 },
+        { "name": "Cheese Burger", "price": 120 }
+      ]
+    },
+    {
+      "name": "CHAAT",
+      "icon": "🥗",
+      "columns": 2,
+      "items": [
+        { "name": "Aloo chana chat", "price": 110 },
+        { "name": "Chana chat", "price": 100 },
+        { "name": "Peanut masala", "price": 110 },
+        { "name": "Plain peanut", "price": 80 },
+        { "name": "Crispy corn", "price": 180 },
+        { "name": "Green Salad", "price": 100 },
+        { "name": "Onion Tomato Salad", "price": 80 },
+        { "name": "French Fries", "price": 120 },
+        { "name": "Peri Peri Fries", "price": 130 }
+      ]
+    },
+    {
+      "name": "STARTERS",
+      "icon": "🍢",
+      "columns": 2,
+      "items": [
+        { "name": "Veg pakoda", "price": 130 },
+        { "name": "Paneer pakora", "price": 200 },
+        { "name": "Onion pakora", "price": 140 },
+        { "name": "Mix pakora", "price": 160 },
+        { "name": "Bread Pakora", "price": 80 },
+        { "name": "Aloo Pakora", "price": 100 },
+        { "name": "Gobhi Pakora", "price": 100 },
+        { "name": "Chilli Paneer dry", "price": 200 },
+        { "name": "Chilli paneer gravy", "price": 220 },
+        { "name": "Honey Chilli Potato", "price": 200 }
+      ]
+    },
+    {
+      "name": "CHINESE",
+      "icon": "🥢",
+      "columns": 2,
+      "items": [
+        { "name": "Veg noodles", "price": 120 },
+        { "name": "Veg hakka noodles", "price": 140 },
+        { "name": "Chilli garlic noodles", "price": 160 },
+        { "name": "Spring roll", "price": 140 },
+        { "name": "Manchurian dry", "price": 150 },
+        { "name": "Manchurian gravy", "price": 180 },
+        { "name": "Dry thukpa", "price": 160 },
+        { "name": "Veg steam momo", "price": 130, "subtitle": "8 piece" },
+        { "name": "Fried Veg Momo", "price": 160, "subtitle": "8 piece" }
+      ]
+    },
+    {
+      "name": "MAIN COURSE",
+      "icon": "🌿",
+      "columns": 2,
+      "items": [
+        { "name": "Paneer Butter masala", "price": 250 },
+        { "name": "Kadhai paneer", "price": 300 },
+        { "name": "Shaahi paneer", "price": 260 },
+        { "name": "Matar paneer", "price": 250 },
+        { "name": "Palak paneer", "price": 250 },
+        { "name": "Mushroom masala", "price": 200 },
+        { "name": "Dal makhni", "price": 220 },
+        { "name": "Dal tadka", "price": 180 },
+        { "name": "Dal fry", "price": 170 },
+        { "name": "Mix veg", "price": 180 },
+        { "name": "Jeera aloo", "price": 100 },
+        { "name": "Aloo Matar", "price": 110 },
+        { "name": "Chana Masala", "price": 160 },
+        { "name": "Paneer Bhurji", "price": 180 },
+        { "name": "Curry Chawal", "price": 130 },
+        { "name": "Dal chawal", "price": 120 },
+        { "name": "Rajma chawal", "price": 150 },
+        { "name": "Aloo Shimla", "price": 120 },
+        { "name": "Aloo gobi", "price": 120 },
+        { "name": "Plain Rayta", "price": 70 },
+        { "name": "Veg Rayta", "price": 100 },
+        { "name": "Boondi Rayta", "price": 110 }
+      ]
+    },
+    {
+      "name": "KUMAONI SPECIAL",
+      "icon": "🏔️",
+      "columns": 1,
+      "items": [
+        { "name": "Aloo Ke Gutke", "price": 120 },
+        { "name": "Bhatt Ki Churdkhani", "price": 160 },
+        { "name": "Kumaoni Raita", "price": 100 }
+      ]
+    },
+    {
+      "name": "RICE",
+      "icon": "🍚",
+      "columns": 2,
+      "items": [
+        { "name": "Steam rice", "price": 120 },
+        { "name": "Jeera rice", "price": 130 },
+        { "name": "Veg pulao", "price": 150 },
+        { "name": "Matar pulao", "price": 140 },
+        { "name": "Veg fried rice", "price": 160 },
+        { "name": "Chilli garlic fried rice", "price": 180 },
+        { "name": "Paneer Fried rice", "price": 190 }
+      ]
+    },
+    {
+      "name": "BREADS",
+      "icon": "🫓",
+      "columns": 2,
+      "items": [
+        { "name": "Plain tawa roti", "price": 15 },
+        { "name": "Butter tawa roti", "price": 20 },
+        { "name": "Missi Roti", "price": 40 },
+        { "name": "Madua Roti", "price": 40 }
+      ]
+    },
+    {
+      "name": "THALI",
+      "icon": "🍽️",
+      "columns": 1,
+      "items": [
+        { "name": "Veg thali", "price": 250, "subtitle": "4 roti, quater rice, 1 seasonal sabzi, 1 dal, pickle, onion salad" },
+        { "name": "Special thali", "price": 350, "subtitle": "4 butter roti, quatar rice, 1 paneer sabzi, 1 dal makhni, pickle, veg salad" },
+        { "name": "Kumaoni thali", "price": 350, "subtitle": "2 madue ki roti, quarter rice, aloo ke gutke, Bhatt ki chudkani, pahadi rayta" }
+      ]
+    },
+    {
+      "name": "SOUP",
+      "icon": "🍜",
+      "columns": 2,
+      "items": [
+        { "name": "Veg soup", "price": 90 },
+        { "name": "Manchow soup", "price": 110 },
+        { "name": "Tomato soup", "price": 90 },
+        { "name": "Cream tomato soup", "price": 110 }
+      ]
+    },
+    {
+      "name": "SWEET DISH",
+      "icon": "🍨",
+      "columns": 2,
+      "items": [
+        { "name": "Gulab jamun", "price": 60, "subtitle": "1 piece" },
+        { "name": "Gulab jamun", "price": 100, "subtitle": "2 piece" },
+        { "name": "Rasgulla", "price": 60, "subtitle": "1 piece" },
+        { "name": "Rasgulla", "price": 100, "subtitle": "2 piece" },
+        { "name": "Vanilla Ice cream", "price": 60, "subtitle": "single scoop" },
+        { "name": "Vanilla Ice cream", "price": 100, "subtitle": "double scoop" },
+        { "name": "Chocolate Ice cream", "price": 70, "subtitle": "single scoop" },
+        { "name": "Chocolate Ice cream", "price": 120, "subtitle": "double scoop" },
+        { "name": "Butter scotch Ice cream", "price": 70, "subtitle": "single scoop" },
+        { "name": "Butter scotch Ice cream", "price": 120, "subtitle": "double scoop" }
+      ]
+    }
+  ]
+}

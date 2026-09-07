@@ -1,8 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { 
   FiStar, 
   FiClock, 
@@ -12,63 +12,23 @@ import {
 
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
-
-const menuCategories = [
-  {
-    name: 'Appetizers',
-    items: [
-      {
-        name: 'Naan',
-        description: 'Freshly baked traditional Indian bread with garlic and herbs.',
-        price: 449,
-        image: '/restaurant.jpg'
-      },
-      {
-        name: 'Pakodi',
-        description: 'Crispy gram flour fritters with mixed vegetables and mint chutney.',
-        price: 99,
-        image: '/restaurant.jpg'
-      }
-    ]
-  },
-  {
-    name: 'Main Courses',
-    items: [
-      {
-        name: 'Chana Masala',
-        description: 'Spiced chickpeas in rich tomato gravy with aromatic Indian spices.',
-        price: 299,
-        image: '/restaurant.jpg'
-      },
-      {
-        name: 'Palak Paneer',
-        description: 'Fresh cottage cheese cubes in creamy spinach curry with garam masala.',
-        price: 349,
-        image: '/restaurant.jpg'
-      }
-    ]
-  },
-  {
-    name: 'Desserts',
-    items: [
-      {
-        name: 'Gajar ka Halwa',
-        description: 'Traditional carrot pudding slow-cooked with milk and cardamom.',
-        price: 89,
-        image: '/restaurant.jpg'
-      },
-      {
-        name: 'Baal Mithai',
-        description: 'Sweet Kumaoni delicacy with roasted khoya and sugar balls coating.',
-        price: 29,
-        image: '/restaurant.jpg'
-      }
-    ]
-  }
-];
+import MenuCategory from '@/components/menu/MenuCategory';
+import menuData from '@/data/menuData.json';
+import '@/components/menu/menu.css';
 
 export default function RestaurantPage() {
-  const [selectedCategory, setSelectedCategory] = useState(menuCategories[0].name);
+  const [activeFilter, setActiveFilter] = useState('all');
+
+  const allCategories = menuData.categories;
+
+  const filteredCategories = useMemo(() => {
+    if (activeFilter === 'all') return allCategories;
+    return allCategories.filter(cat => cat.name === activeFilter);
+  }, [activeFilter, allCategories]);
+
+  const totalItems = useMemo(() => {
+    return allCategories.reduce((sum, cat) => sum + cat.items.length, 0);
+  }, [allCategories]);
 
   return (
     <motion.div 
@@ -152,51 +112,82 @@ export default function RestaurantPage() {
 
       {/* Menu Section */}
       <section id="menu" className="container mx-auto px-4 py-20">
-        <div className="text-center mb-12">
+        <div className="text-center mb-8">
           <h2 className="text-4xl font-serif font-bold text-gray-800 mb-4">
             Our <span className="text-[var(--parth-pink)]">Menu</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Explore our complete restaurant menu. Click any page to view it in full size.
+            Explore our complete restaurant menu — authentic Kumaoni flavours crafted with love.
           </p>
         </div>
 
-        {/* Menu Pages */}
-        <div className="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto">
-          
-          {[
-            "/menu/menu1.jpeg",
-            "/menu/menu2.png",
-            "/menu/menu3.png",
-            "/menu/menu4.png"
-          ].map((src, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="relative rounded-2xl overflow-hidden shadow-xl group"
-            >
-              <a href={src} target="_blank">
-                <div className="relative w-full h-[600px]">
-                  <Image
-                    src={src}
-                    alt={`Restaurant Menu Page ${index + 1}`}
-                    fill
-                    className="object-contain bg-white"
-                  />
-                </div>
+        {/* Stats */}
+        <div className="menu-stats">
+          <div className="menu-stats__item">
+            <span className="menu-stats__number">{allCategories.length}</span>
+            <span className="menu-stats__label">Categories</span>
+          </div>
+          <div className="menu-stats__item">
+            <span className="menu-stats__number">{totalItems}</span>
+            <span className="menu-stats__label">Dishes</span>
+          </div>
+        </div>
 
-                {/* Hover overlay */}
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition flex items-center justify-center">
-                  <span className="opacity-0 group-hover:opacity-100 text-white text-lg font-semibold">
-                    View Full Menu Page
-                  </span>
-                </div>
-              </a>
-            </motion.div>
+        {/* Cover Image */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="menu-cover"
+        >
+          <div className="relative w-full" style={{ aspectRatio: '3/4' }}>
+            <Image
+              src="/menu/menu1.jpeg"
+              alt="Parth Hotel Menu Cover"
+              fill
+              className="object-contain"
+              style={{ background: '#f5e6d3' }}
+            />
+          </div>
+        </motion.div>
+
+        {/* Category Filter Navigation */}
+        <div className="menu-filter">
+          <button
+            onClick={() => setActiveFilter('all')}
+            className={`menu-filter__btn ${activeFilter === 'all' ? 'menu-filter__btn--active' : ''}`}
+          >
+            <span className="menu-filter__icon">🍽️</span>
+            All
+          </button>
+          {allCategories.map((cat) => (
+            <button
+              key={cat.name}
+              onClick={() => setActiveFilter(cat.name)}
+              className={`menu-filter__btn ${activeFilter === cat.name ? 'menu-filter__btn--active' : ''}`}
+            >
+              <span className="menu-filter__icon">{cat.icon}</span>
+              {cat.name.charAt(0) + cat.name.slice(1).toLowerCase()}
+            </button>
           ))}
+        </div>
+
+        {/* Menu Categories Grid */}
+        <div className="max-w-5xl mx-auto">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeFilter}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.3 }}
+              className="menu-grid"
+            >
+              {filteredCategories.map((cat) => (
+                <MenuCategory key={cat.name} category={cat} />
+              ))}
+            </motion.div>
+          </AnimatePresence>
         </div>
       </section>
 
