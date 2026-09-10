@@ -3,18 +3,29 @@
 import { useState, useMemo } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  FiStar, 
-  FiClock, 
-  FiGlobe, 
-  FiMap 
-} from 'react-icons/fi';
+import {
+  Star, Clock, Globe, MapPin, UtensilsCrossed,
+  Coffee, Egg, Sandwich, Salad, Flame, Soup,
+  Leaf, Mountain, Wheat, CircleDot, CupSoda, IceCreamCone
+} from 'lucide-react';
 
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import MenuCategory from '@/components/menu/MenuCategory';
 import menuData from '@/data/menuData.json';
 import '@/components/menu/menu.css';
+
+const iconMap = {
+  Star, Clock, Globe, MapPin, UtensilsCrossed,
+  Coffee, Egg, Sandwich, Salad, Flame, Soup,
+  Leaf, Mountain, Wheat, CircleDot, CupSoda, IceCreamCone
+};
+
+function DynIcon({ name, size = 16, className = '' }) {
+  const Icon = iconMap[name];
+  if (!Icon) return null;
+  return <Icon size={size} className={className} strokeWidth={1.8} />;
+}
 
 export default function RestaurantPage() {
   const [activeFilter, setActiveFilter] = useState('all');
@@ -73,7 +84,7 @@ export default function RestaurantPage() {
             transition={{ delay: 0.1 }}
             className="bg-white rounded-2xl shadow-lg p-6 text-center"
           >
-            <FiStar className="mx-auto text-4xl text-[var(--parth-gold)] mb-4" />
+            <DynIcon name="Star" size={36} className="mx-auto text-[var(--parth-gold)] mb-4" />
             <h3 className="text-xl font-bold text-gray-800 mb-2">Experienced-Chef</h3>
             <p className="text-gray-600">Recognized for culinary innovation and excellence</p>
           </motion.div>
@@ -83,7 +94,7 @@ export default function RestaurantPage() {
             transition={{ delay: 0.2 }}
             className="bg-white rounded-2xl shadow-lg p-6 text-center"
           >
-            <FiClock className="mx-auto text-4xl text-[var(--parth-pink)] mb-4" />
+            <DynIcon name="Clock" size={36} className="mx-auto text-[var(--parth-pink)] mb-4" />
             <h3 className="text-xl font-bold text-gray-800 mb-2">Open Daily</h3>
             <p className="text-gray-600">Breakfast, Lunch & Dinner from 6:00 AM to 10:00 PM</p>
           </motion.div>
@@ -93,7 +104,7 @@ export default function RestaurantPage() {
             transition={{ delay: 0.3 }}
             className="bg-white rounded-2xl shadow-lg p-6 text-center"
           >
-            <FiGlobe className="mx-auto text-4xl text-[var(--parth-gold)] mb-4" />
+            <DynIcon name="Globe" size={36} className="mx-auto text-[var(--parth-gold)] mb-4" />
             <h3 className="text-xl font-bold text-gray-800 mb-2">Global Cuisine</h3>
             <p className="text-gray-600">Diverse menu inspired by international flavors</p>
           </motion.div>
@@ -103,7 +114,7 @@ export default function RestaurantPage() {
             transition={{ delay: 0.4 }}
             className="bg-white rounded-2xl shadow-lg p-6 text-center"
           >
-            <FiMap className="mx-auto text-4xl text-[var(--parth-pink)] mb-4" />
+            <DynIcon name="MapPin" size={36} className="mx-auto text-[var(--parth-pink)] mb-4" />
             <h3 className="text-xl font-bold text-gray-800 mb-2">Local Ingredients</h3>
             <p className="text-gray-600">Sourcing fresh, local produce daily</p>
           </motion.div>
@@ -157,7 +168,7 @@ export default function RestaurantPage() {
             onClick={() => setActiveFilter('all')}
             className={`menu-filter__btn ${activeFilter === 'all' ? 'menu-filter__btn--active' : ''}`}
           >
-            <span className="menu-filter__icon">🍽️</span>
+            <span className="menu-filter__icon"><DynIcon name="UtensilsCrossed" size={14} /></span>
             All
           </button>
           {allCategories.map((cat) => (
@@ -166,7 +177,7 @@ export default function RestaurantPage() {
               onClick={() => setActiveFilter(cat.name)}
               className={`menu-filter__btn ${activeFilter === cat.name ? 'menu-filter__btn--active' : ''}`}
             >
-              <span className="menu-filter__icon">{cat.icon}</span>
+              <span className="menu-filter__icon"><DynIcon name={cat.icon} size={14} /></span>
               {cat.name.charAt(0) + cat.name.slice(1).toLowerCase()}
             </button>
           ))}

@@ -10,7 +10,7 @@
   "categories": [
     {
       "name": "BEVERAGES",
-      "icon": "☕",
+      "icon": "Coffee",
       "columns": 2,
       "items": [
         { "name": "Tea", "price": 25 },
@@ -38,7 +38,7 @@
     },
     {
       "name": "BREAKFAST",
-      "icon": "🍳",
+      "icon": "Egg",
       "columns": 2,
       "items": [
         { "name": "Aloo paratha", "price": 70 },
@@ -59,7 +59,7 @@
     },
     {
       "name": "SANDWICH",
-      "icon": "🥪",
+      "icon": "Sandwich",
       "columns": 2,
       "items": [
         { "name": "Cold veg sandwich", "price": 70 },
@@ -72,7 +72,7 @@
     },
     {
       "name": "CHAAT",
-      "icon": "🥗",
+      "icon": "Salad",
       "columns": 2,
       "items": [
         { "name": "Aloo chana chat", "price": 110 },
@@ -88,7 +88,7 @@
     },
     {
       "name": "STARTERS",
-      "icon": "🍢",
+      "icon": "Flame",
       "columns": 2,
       "items": [
         { "name": "Veg pakoda", "price": 130 },
@@ -105,7 +105,7 @@
     },
     {
       "name": "CHINESE",
-      "icon": "🥢",
+      "icon": "Soup",
       "columns": 2,
       "items": [
         { "name": "Veg noodles", "price": 120 },
@@ -121,7 +121,7 @@
     },
     {
       "name": "MAIN COURSE",
-      "icon": "🌿",
+      "icon": "Leaf",
       "columns": 2,
       "items": [
         { "name": "Paneer Butter masala", "price": 250 },
@@ -150,7 +150,7 @@
     },
     {
       "name": "KUMAONI SPECIAL",
-      "icon": "🏔️",
+      "icon": "Mountain",
       "columns": 1,
       "items": [
         { "name": "Aloo Ke Gutke", "price": 120 },
@@ -160,7 +160,7 @@
     },
     {
       "name": "RICE",
-      "icon": "🍚",
+      "icon": "Wheat",
       "columns": 2,
       "items": [
         { "name": "Steam rice", "price": 120 },
@@ -174,7 +174,7 @@
     },
     {
       "name": "BREADS",
-      "icon": "🫓",
+      "icon": "CircleDot",
       "columns": 2,
       "items": [
         { "name": "Plain tawa roti", "price": 15 },
@@ -185,17 +185,17 @@
     },
     {
       "name": "THALI",
-      "icon": "🍽️",
+      "icon": "UtensilsCrossed",
       "columns": 1,
       "items": [
-        { "name": "Veg thali", "price": 250, "subtitle": "4 roti, quater rice, 1 seasonal sabzi, 1 dal, pickle, onion salad" },
+        { "name": "Veg thali", "price": 180, "subtitle": "4 roti, quater rice, 1 seasonal sabzi, 1 dal, pickle, onion salad" },
         { "name": "Special thali", "price": 350, "subtitle": "4 butter roti, quatar rice, 1 paneer sabzi, 1 dal makhni, pickle, veg salad" },
         { "name": "Kumaoni thali", "price": 350, "subtitle": "2 madue ki roti, quarter rice, aloo ke gutke, Bhatt ki chudkani, pahadi rayta" }
       ]
     },
     {
       "name": "SOUP",
-      "icon": "🍜",
+      "icon": "CupSoda",
       "columns": 2,
       "items": [
         { "name": "Veg soup", "price": 90 },
@@ -206,7 +206,7 @@
     },
     {
       "name": "SWEET DISH",
-      "icon": "🍨",
+      "icon": "IceCreamCone",
       "columns": 2,
       "items": [
         { "name": "Gulab jamun", "price": 60, "subtitle": "1 piece" },

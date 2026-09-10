@@ -1,5 +1,23 @@
 'use client';
 
+import {
+  Coffee, Egg, Sandwich, Salad, Flame, Soup,
+  Leaf, Mountain, Wheat, CircleDot, UtensilsCrossed,
+  CupSoda, IceCreamCone
+} from 'lucide-react';
+
+const iconMap = {
+  Coffee, Egg, Sandwich, Salad, Flame, Soup,
+  Leaf, Mountain, Wheat, CircleDot, UtensilsCrossed,
+  CupSoda, IceCreamCone
+};
+
+function CategoryIcon({ name, size = 20, color = '#f5ebd5' }) {
+  const Icon = iconMap[name];
+  if (!Icon) return null;
+  return <Icon size={size} color={color} strokeWidth={1.8} />;
+}
+
 export default function MenuCategory({ category }) {
   const isMultiCol = category.columns === 2;
   const isDetailed = category.columns === 1 && category.items.some(item => item.subtitle && item.subtitle.length > 20);
@@ -10,7 +28,7 @@ export default function MenuCategory({ category }) {
       {/* Header */}
       <div className="menu-category-card__header">
         <div className="menu-category-card__icon-wrap">
-          {category.icon}
+          <CategoryIcon name={category.icon} />
         </div>
         <span className="menu-category-card__title">{category.name}</span>
         <span className="menu-category-card__count">{category.items.length} items</span>
